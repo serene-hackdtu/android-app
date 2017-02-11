@@ -72,7 +72,22 @@ public class ReportSymptoms extends AppCompatActivity {
                 {
                     @Override
                     public void onResponse(String response) {
-                        Log.d("Response",response);
+                        Log.d("Response", response);
+                        try{
+                            JSONObject res=new JSONObject(response);
+                            Intent i=new Intent(getApplicationContext(),Diagonosis.class);
+                            i.putExtra("disease",res.getString("Disease"));
+                            i.putExtra("remedy",res.getString("Remedy"));
+                            i.putExtra("Test",res.getString("Test"));
+                            startActivity(i);
+
+
+                        }
+                        catch(Exception e)
+                        {
+                            Log.d("vollleyerror","yes there is");
+                            e.printStackTrace();
+                        }
 
                     }
                 },

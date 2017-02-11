@@ -77,7 +77,7 @@ public class ReportSymptoms extends AppCompatActivity {
                             JSONObject res=new JSONObject(response);
                             Intent i=new Intent(getApplicationContext(),Diagonosis.class);
                             i.putExtra("disease",res.getString("Disease"));
-                            i.putExtra("remedy",res.getString("Remedy"));
+                            i.putExtra("remedy",res.getString("remedy"));
                             i.putExtra("Test",res.getString("Test"));
                             startActivity(i);
 

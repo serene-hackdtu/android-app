@@ -23,6 +23,10 @@ public class Diagonosis extends AppCompatActivity {
        disease=(AppCompatTextView)findViewById(R.id.disease);
         remedy=(AppCompatTextView)findViewById(R.id.remedies);
         test=(AppCompatTextView)findViewById(R.id.test);
+        disease.setText(getIntent().getStringExtra("disease"));
+        remedy.setText(getIntent().getStringExtra("remedy"));
+        test.setText(getIntent().getStringExtra("Test"));
+
     }
 
 }
